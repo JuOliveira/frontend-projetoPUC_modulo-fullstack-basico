@@ -1,4 +1,4 @@
-//Flag para sinalizar erros nas operações de adicionar um jogo à coleção
+/* Flag para sinalizar erros nas operações de adicionar um jogo à coleção*/
 let addGameError = '';
 
 /*
@@ -106,10 +106,8 @@ const searchGame = async (searchQuery) => {
     .then((response) => response.json())
     .then((data) => {
       if (data.results.length === 0) {
-
         let noResultsText = document.getElementById('no-results-container');
         noResultsText.classList.remove('visually-hidden');
-
       } else {
         data.results.forEach((item) => insertSearchItem(item));
       }
@@ -117,7 +115,8 @@ const searchGame = async (searchQuery) => {
       document.getElementById('search-btn').disabled = false;
 
       let spinner = document.getElementById('spinner');
-      let loadingText = document.getElementById('text-loading');
+      let loadingText = document.getElementById('text-loading')
+
       spinner.classList.add('visually-hidden');
       loadingText.classList.add('visually-hidden');
     })
@@ -171,6 +170,7 @@ const addGame = async (data) => {
         if (err.status === 400) {
           addGameError = 'Ocorreu um erro e o jogo não foi adicionado';
         }
+
         throw err
       } else {
         return response.json()
@@ -206,6 +206,7 @@ const deleteGame = async (id) => {
 
 const insertCard = (data) => {
   let gameCollectionTab = document.getElementById('nav-game-collection');
+
   let card = document.createElement('div');
   let imgContainer = document.createElement('div');
   let img = document.createElement('img');
@@ -224,16 +225,21 @@ const insertCard = (data) => {
 
   card.appendChild(imgContainer);
   card.appendChild(cardBody);
+
   imgContainer.appendChild(img);
+
   cardBody.appendChild(cardInfoContainer1);
   cardBody.appendChild(cardInfoContainer2);
+
   cardInfoContainer1.appendChild(cardTitle);
   cardInfoContainer1.appendChild(textPlatform);
   cardInfoContainer1.appendChild(textReleaseDate);
   cardInfoContainer1.appendChild(textPurchaseDate);
   cardInfoContainer1.appendChild(textStatus);
+
   cardInfoContainer2.appendChild(favoriteIcon);
   cardInfoContainer2.appendChild(btnContainer);
+
   btnContainer.appendChild(deleteButton);
   deleteButton.appendChild(deleteBtnIcon);
 
@@ -249,15 +255,16 @@ const insertCard = (data) => {
   btnContainer.className = 'delete-btn';
 
   card.id = data.id;
-  img.src = data.cover_art ? 'data:image/jpeg;base64,'+ data.cover_art : 'img/no_image_available.jpg';
-  favoriteIcon.style["fontSize"] = "20px";
-  favoriteIcon.style["color"] = "white";
+  img.src = data.cover_art ? data.cover_art : 'img/no_image_available.jpg';
   textReleaseDate.textContent = 'Data de lançamento: ' + (data.release_date ? data.release_date : '-');
   textPurchaseDate.textContent = 'Data de compra: ' + (data.purchase_date ? data.purchase_date : '-');
   textPlatform.textContent = data.platform;
   textStatus.textContent = 'Status: '+data.status;
   cardTitle.textContent = data.title;
   deleteBtnIcon.className = 'bi bi-trash';
+
+  favoriteIcon.style["fontSize"] = "20px";
+  favoriteIcon.style["color"] = "white";
   deleteBtnIcon.style["fontSize"] = "16px";
   deleteBtnIcon.style["color"] = "white";
 
@@ -346,7 +353,7 @@ const insertSearchItem = async (data) => {
   img.className = 'img-card';
   itemInfoContainer.className = 'item-info-container';
 
-  img.src = 'data:image/jpeg;base64,'+ data.cover_art;
+  img.src = data.cover_art ? data.cover_art : 'img/no_image_available.jpg';
   title.textContent = data.name;
   releaseDate.textContent = 'Data de lançamento: ' + data.release_date;
 
@@ -371,6 +378,7 @@ const insertSearchItem = async (data) => {
       option.text = item;
       select.appendChild(option);
     })
+
     document.getElementById('modal-title-input').value = data.name;
     document.getElementById('modal-release-date-input').value = data.release_date;
     document.getElementById('modal-cover-art-input').value = data.cover_art;
@@ -444,7 +452,7 @@ const getSearchQuery = () => {
 const getBase64 = (file) => {
   return new Promise(function(resolve, reject) {
       var reader = new FileReader();
-      reader.onload = function() { resolve(reader.result.split(',')[1]); };
+      reader.onload = function() { resolve(reader.result); };
       reader.onerror = reject;
       reader.readAsDataURL(file);
   });
@@ -507,6 +515,12 @@ const removeOptions = (selectElement) => {
      selectElement.remove(i);
   }
 }
+
+/*
+  --------------------------------------------------------------------------------------
+  Função para remover do HTML todos os elementos filhos dentro de um elemento
+  --------------------------------------------------------------------------------------
+*/
 
 const removeButtons = (divElement) => {
   while (divElement.firstChild) {

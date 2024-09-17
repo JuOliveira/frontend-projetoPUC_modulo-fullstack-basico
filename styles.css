@@ -15,16 +15,6 @@ header {
     width: 100%;
 }
 
-.title {
-    color: white;
-    width: 100%;
-    background-color: rgb(0, 0, 0);;
-    display: inline-block;
-    padding: 50px 0px;
-    position: sticky;
-    top: 0px;
-}
-
 #nav-tab {
     background-color: rgb(0, 0, 0);;
     color: white;
@@ -36,6 +26,23 @@ header {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+}
+
+#game-collection-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.title {
+    color: white;
+    width: 100%;
+    background-color: rgb(0, 0, 0);;
+    display: inline-block;
+    padding: 50px 0px;
+    position: sticky;
+    top: 0px;
 }
 
 .nav {
@@ -245,13 +252,6 @@ header {
 
 .no-results-text, .search-error-text {
     color: white;
-}
-
-#game-collection-empty {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
 }
 
 .collection-empty-text {
