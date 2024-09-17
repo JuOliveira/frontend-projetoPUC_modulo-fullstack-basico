@@ -1,0 +1,260 @@
+body,
+ul,
+li {
+    font-family: tahoma;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(0, 0, 0);
+}
+
+header {
+    background-color: rgb(0, 0, 0);;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+.title {
+    color: white;
+    width: 100%;
+    background-color: rgb(0, 0, 0);;
+    display: inline-block;
+    padding: 50px 0px;
+    position: sticky;
+    top: 0px;
+}
+
+#nav-tab {
+    background-color: rgb(0, 0, 0);;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+#search-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.nav {
+    --bs-nav-link-color: white;
+    --bs-nav-link-hover-color: rgb(168, 168, 168);
+}
+
+.nav-tabs .nav-link.active {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+.nav-tabs {
+    --bs-nav-tabs-link-active-border-color: white white rgb(0, 0, 0);;
+}
+
+.nav-pills .nav-link.active {
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+.pills-container {
+    width: 20%;
+    margin-right: 50px;
+}
+
+.add-game-tab {
+    margin: 20px;
+}
+
+.add-tab-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.active.add-game-container {
+    width: 70%;
+}
+
+.tab-content.add-game {
+    display: flex;
+    width: 100%;
+}
+
+.img-container {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.img-card {
+    display: block;
+    max-width: 300px;
+    max-height: 300px;
+    margin: auto;
+}
+
+.card {
+    margin: 15px auto;
+    background-color: rgb(54, 54, 54);
+    color: rgb(248, 248, 248);
+    width: 75%;
+}
+
+.favorite-icon {
+    font-size: 10rem;
+    color: #f44336;
+    margin-bottom: auto;
+}
+
+.btn-card {
+    background-color: transparent;
+    border: 2px solid rgb(248, 248, 248);
+}
+
+.btn-card:hover {
+    border: 2px solid rgb(248, 248, 248);
+    background-color: rgb(124, 124, 124);
+}
+
+.delete-btn {
+    width: 40px;
+    height: 40px;
+    margin-top: auto;
+}
+
+.card-info-left {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+}
+
+.card-info-right {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.search-item-container {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(54, 54, 54);
+}
+
+.search-item-container:hover {
+    background-color: rgb(124, 124, 124);
+}
+
+.item-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.list-group-item {
+    background-color: rgb(54, 54, 54);
+    color: rgb(248, 248, 248)
+}
+
+.btn-search {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 2px solid rgb(248, 248, 248);
+    margin-left: 20px;
+}
+
+.btn-search:hover {
+    border: 2px solid rgb(248, 248, 248);
+    background-color: rgb(54, 54, 54);
+}
+
+.btn-search:disabled {
+    border: 2px solid rgb(248, 248, 248, 0.5);
+    background-color: rgb(54, 54, 54, 0,5);
+}
+
+.form-label, .form-check-label {
+    color: rgb(248, 248, 248);
+}
+
+.form-check-input:checked {
+    background-color: rgb(124, 124, 124);
+    border-color: rgb(124, 124, 124);
+}
+
+.list-group-item-action:focus, .list-group-item-action:hover {
+    background-color: rgb(124, 124, 124);
+    color: white;
+}
+
+.btn-form {
+    border: 2px solid rgb(248, 248, 248);
+    background-color: transparent;
+    color: rgb(248, 248, 248)
+}
+
+.btn-form:hover {
+    border: 2px solid rgb(248, 248, 248);
+    background-color: rgb(124, 124, 124);
+    color: white;
+}
+
+.modal-content {
+    background-color: rgb(54, 54, 54);
+    color: white;
+}
+
+.btn-close {
+    color: white;
+}
+
+.loading-container {
+    margin-top: 10px;
+    align-items: center;
+}
+
+.loading-text {
+    margin-left: 10px;
+    color: white;
+}
+
+.loading-collection-container {
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-collection-text {
+    font-size: 20px;
+    margin-left: 10px;
+    color: white;
+}
+
+.spinner-border {
+    border: var(--bs-spinner-border-width) solid rgb(54, 54, 54);
+    border-right-color: white;
+}
+
+.no-results-text, .search-error-text {
+    color: white;
+}
+
+#game-collection-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.collection-empty-text {
+    font-size: 20px;
+    color: white;
+}
